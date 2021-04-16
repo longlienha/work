@@ -7,7 +7,7 @@ browser.get("https://www.facebook.com/")
 
 sleep(3)
 
-loginFB(browser, "longlienha20@gmail.com", "longlienha")
+loginFB(browser, "longlienha20@gmail.com", "l0nglienha")
 sleep(2)
 checkLogin(browser)
 sleep(2)
@@ -19,7 +19,14 @@ if browser.current_url == "https://like2like.org/signin":
     except:
         browser.close()
 
-sleep(2)
-getmoney = browser.find_elements_by_xpath("/html/body/div[3]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/ul/li[4]")
-print(getmoney)
-sleep(20)
+sleep(5)
+getmoney = browser.find_element_by_xpath('//*[@id="root"]/section/aside/div/div[2]/div[2]/div[1]/ul/li[4]/a')
+getmoney.click()
+clickLocyView(browser)
+sleep(5)
+getListJob = browser.find_elements_by_class_name("gx-module-list-item")
+# for job in getListJob :
+#     job.click()
+doJob(browser,getListJob)
+sleep(5)
+browser.close()
